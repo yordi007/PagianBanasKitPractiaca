@@ -1,0 +1,136 @@
+body{
+    border: 1px solid;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    margin: auto;
+    font-family: fantasy;
+    font-size: 17.5px;
+}
+header{
+    width: 100%;
+    height: 150px;
+    background-color: #3050e0;
+    margin: 5px;
+    position: fixed; /*Fija el Navegador*/
+    top:0;
+    left:0;
+}
+.contenido{
+    width: 100%;
+    height: calc(350px + 45vw);
+    background-color: darkorange;
+    margin: 15px auto;
+ 
+}
+aside{
+    border: 1px solid black;
+    width: 25%;
+    height: 90%;
+    float: left;
+    background-color: burlywood;
+    margin: 5px;
+}
+
+article{
+    border: 1px solid black;
+    width:65%;
+    height: 90%;
+    background-color: crimson;
+    float: left;
+  margin: 5px;
+}
+.descripcion{
+    width: 100%;
+    height: 50%;
+    background-color: yellow;
+}
+figure{
+    display: inline;
+    align-items: center;
+}
+footer{
+    width: 100%;
+    height: 150px;
+    background-color: darkcyan;
+}
+article figure img {
+    width: calc( 250px - 8vw  );
+    height: calc( 250px - 8vw  );
+    border-radius: 15px;
+    margin: 20px 50px;
+}
+
+/*BARRA DE NAVEGACION MENU*/
+#btn-menu{
+    display: none;/*Desaparede de la Maqueta*/
+    
+}
+header label{
+    
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+     border-right: 1px solid var(--color-linea);
+}
+header label:hover{
+    cursor:pointer;
+    background: rgba(0,0,0,0.3);
+   
+}
+.menu ul{
+    margin: 0px;
+    list-style: none;/*Quita el estilo de Lista*/
+    padding: 0px;
+    display: flex; /* Hace que los li dentro sean Cajas Flexibles y los
+    organiza por defecto (flex-direction:row) como una fila*/
+    /*Mover los enlaces hacia el lado que desee*/
+    justify-content: flex-end; /*Se Desplazan.*/ 
+    
+}
+/*Proporcion de Crecimiento*/
+.menu li{
+    flex-grow: 1;/*Disbribuye Cada Elemnto Uniformemente*/
+    text-align: center;
+    border-right: 1px solid var(--color-linea);  
+}
+
+.menu li:hover{
+    background: rgba(0,0,0,0.3);/*Fondo Ocuro Tranparete*/
+}
+.menu li a{
+    display: block;
+    padding: 20px;
+    padding: 15px 20px;
+color: white;
+    text-decoration: none;/*Quita el sub-rayado de los enlaces.*/
+}
+
+@media(max-width:768px){
+      header label{
+        display: block;
+    }
+    .menu{
+        position: absolute;
+        background: var(--color-nav);
+        width: var(--tamano-menu); /*Un Ancho*/
+        margin-left: var(--tamano-menu);/*Envia el menu al lado izquierdo,oculto*/
+        transition: all 0.9s; /*Efecto de Transicion*/
+    }
+    .menu ul{
+        flex-direction:column;/*Ahora lo converte a una Columna*/
+        
+        
+    }
+    .menu li{
+        border-top: 1px solid var(--color-linea);/*Border Superiro*/
+        text-align:left;
+    } 
+    #btn-menu:checked ~ .menu{
+        margin: 0px;
+    }
+}
+
+
+
